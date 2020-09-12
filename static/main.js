@@ -1,6 +1,6 @@
 
-let oldText;
 let lastPeriodIndex = -1;
+let /* Array<String> */ previousKeyWords = [];
 
 /**
  * Gets the text the user has inputted.
