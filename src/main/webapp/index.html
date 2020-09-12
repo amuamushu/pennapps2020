@@ -2,13 +2,22 @@
 <html>
   <head>
     <title>App Engine Demo</title>
-    <script src="main.js"></script>
+    <script src="script.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
+    <h2> Welcome to Essay Helper</h2>
     <div class="d-flex flex-row">
-      <textarea rows="100" cols="170"></textarea>
-      <div id="info" style="background-color: blue; width: 100%;"></div>
+      <textarea rows="100" cols="170" id="text-area" oninput="getUserText()"></textarea>
+      <div id="info" style="background-color: wheat; width: 100%;">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Keyword</h5>
+            <p class="card-text">Information about the keyword fetched from wolfram alpha</p>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
