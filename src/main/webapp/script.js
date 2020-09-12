@@ -25,3 +25,6 @@ function getUserText() {
       console.log(lastSentence);
   }
 }
+
+// TODO: Create a function for rendering the information on the DOM
+// once it is fetched from the API
