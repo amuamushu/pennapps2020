@@ -15,6 +15,13 @@ parser.add_argument('--cam_width', type=int, default= 800)
 parser.add_argument('--cam_height', type=int, default= 450)
 parser.add_argument('--scale_factor', type=float, default=0.7125) # 
 args = parser.parse_args()
+
+# openCV text
+font = cv2.FONT_HERSHEY_SIMPLEX 
+org = (50, 50) 
+fontScale = 1
+color = (255, 0, 0) 
+thickness = 2
     
 #matrix1, matrix2
 def find_error(coords1, coords2, score1, score2):
@@ -100,8 +107,13 @@ def main():
                 print('{:.1f}%'.format(min(error_sum / 2.5, 100)))
                 error_sum = 0
             else:
-                error_sum += find_error(keypoint_coords_arr[frame_num % frame_count][0], keypoint_coords[0], keypoint_scores_arr[frame_num % frame_count][0], keypoint_scores[0])
-            frames += 1
+                found_error = find_error(keypoint_coords_arr[frame_num % frame_count][0], keypoint_coords[0], keypoint_scores_arr[frame_num % frame_count][0], keypoint_scores[0]) 
+                error_sum += found_error
+                # print(f"found error {found_error}")
+                if found_error > -10:
+                    frame_num += 1
+                    print("ADVANCED TO NEXT KEYFRAME")
+
             
             # display frames
             target_overlay_image = posenet.draw_skel_and_kp(
