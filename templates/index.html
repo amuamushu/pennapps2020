@@ -3,11 +3,10 @@
   
 <head> 
     <title> 
-        How to Integrate Webcam using 
-        JavaScript on HTML5 ? 
+        Dance Freeze 
     </title> 
     <link rel="stylesheet" href="../static/style.css">
-    <script src="../static/main.js"></script>
+    
     <link rel="stylesheet" href="../static/style.css">
     <link href= 
 "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -24,17 +23,18 @@
     </script> 
 </head> 
   
-<body> 
-    <div class="container row">
+<body>
+    <h1>Dance Freeze</h1>
+    <div class="container row align-items-center">
     <div id="video-container" class="border col-6">
-      <video width="100%" controls>
+      <video id="video" width="100%" controls>
         <!-- TODO: Update the video URL dynamically in the future -->
         <source src="../static/dancing_man.mp4" type="video/mp4">
       </video>
     </div>
     <div class="webcam-container border col-6"> 
       <div> 
-          <video id="video"
+          <video id="webcam"
               width="100%" autoplay> 
           </video> 
       </div> 
@@ -50,5 +50,8 @@
           </a> 
       </div> 
     </div> 
-</div> 
-</body> 
+</div>
+<script src="../static/main.js"></script>
+<button id="snap" onclick="snap()">Take screenshot</button>
+</body>
+<script src="../static/video.js"></script> 
